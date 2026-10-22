@@ -1,22 +1,20 @@
 try:
-    weight = float(input("Введите ваш вес (кг): "))
-    height = float(input("Введите ваш рост (м, например 1.75): "))
+    x = float(input("Введите координату x: "))
+    y = float(input("Введите координату y: "))
 
-    if weight <= 0 or height <= 0:
-        print("Ошибка: вес и рост должны быть положительными числами!")
-    else:
-        bmi = weight / (height ** 2)
-
-        if bmi < 18.5:
-            category = "Недостаточный вес"
-        elif bmi < 25:
-            category = "Норма"
-        elif bmi < 30:
-            category = "Избыточный вес"
-        else:
-            category = "Ожирение"
-
-        print(f"Ваш ИМТ: {bmi:.2f}")
-        print(f"Категория: {category}")
+    if x == 0 and y == 0:
+        print("Точка находится в начале координат.")
+    elif x == 0:
+        print("Точка лежит на оси Y.")
+    elif y == 0:
+        print("Точка лежит на оси X.")
+    elif x > 0 and y > 0:
+        print("Точка в I четверти.")
+    elif x < 0 and y > 0:
+        print("Точка во II четверти.")
+    elif x < 0 and y < 0:
+        print("Точка в III четверти.")
+    elif x > 0 and y < 0:
+        print("Точка в IV четверти.")
 except ValueError:
-    print("Ошибка: введите корректные числовые значения!")
+    print("Ошибка: введите корректные числа!")
