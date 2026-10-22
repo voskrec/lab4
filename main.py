@@ -1,9 +1,19 @@
-a=input("введите один символ:")
-if len(a)!=1:
-    print('ошибка')
-elif a.isdigit():
-    print('данный символ это число')
-elif a.isalpha():
-    print('данный символ это буква')
-else:
-    print('это другой символ символ')
+import random
+
+s= random.randint(1, 100)
+
+print("Я загадал число от 1 до 100.")
+
+while True:
+    try:
+        a= int(input("Твой вариант: "))
+
+        if a<s:
+            print("Загаданное число больше.")
+        elif a>s:
+            print("Загаданное число меньше.")
+        else:
+            print(f"Поздравляю! Ты угадал число")
+            break
+    except ValueError:
+        print("Ошибка: введите целое число!")
