@@ -1,17 +1,22 @@
-def converter():
-    while True:
-        try:
-            num = int(input("Введите целое положительное число в десятичной системе: "))
-            if num < 0:
-                print("Ошибка: число должно быть положительным!")
-                continue
-            break
-        except ValueError:
-            print("Ошибка: введите корректное целое число!")
+try:
+    weight = float(input("Введите ваш вес (кг): "))
+    height = float(input("Введите ваш рост (м, например 1.75): "))
 
-    print(f"Десятичная: {num}")
-    print(f"Двоичная: {bin(num)[2:]}")          # срез [2:] убирает префикс '0b'
-    print(f"Восьмеричная: {oct(num)[2:]}")      # убирает '0o'
-    print(f"Шестнадцатеричная: {hex(num)[2:].upper()}")  # убирает '0x', делает заглавные
+    if weight <= 0 or height <= 0:
+        print("Ошибка: вес и рост должны быть положительными числами!")
+    else:
+        bmi = weight / (height ** 2)
 
-converter()
+        if bmi < 18.5:
+            category = "Недостаточный вес"
+        elif bmi < 25:
+            category = "Норма"
+        elif bmi < 30:
+            category = "Избыточный вес"
+        else:
+            category = "Ожирение"
+
+        print(f"Ваш ИМТ: {bmi:.2f}")
+        print(f"Категория: {category}")
+except ValueError:
+    print("Ошибка: введите корректные числовые значения!")
