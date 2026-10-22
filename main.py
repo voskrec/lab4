@@ -1,12 +1,13 @@
-#воодим числа
-a=int(input("введите первое число"))
-b=int(input("введите второе число"))
-c=int(input("введите третье число"))
-#находим максимальное
-if a>b and a>c:
-    max=a
-elif b>a and b>c:
-    max=b
-else:
-    max=c
-print(max)
+#вводим возраст
+a=int(input("введите возраст:"))
+#определяем критерий
+if a<0:
+    print('не существует')
+elif a<12:
+    print('реюенок')
+elif a<18:
+    print('подросток')
+elif a<65:
+    print('взрослый')
+elif a>=65:
+    print('старый')
